@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/splash_screen_red"
+        android:scaleType="centerCrop"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:text="Train!"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:id="@+id/button3"
+        android:background="@drawable/my_button_red"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/position_button"
+        android:layout_marginBottom="50dp"
+        android:onClick="onClickTrain"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:text="Position!"
+        android:textSize="15dp"
+        android:textColor="#e53e3e"
+        android:id="@+id/position_button"
+        android:background="@drawable/my_button_white"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:onClick="onClickPosition"/>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/debug_switch"
+        android:checked="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

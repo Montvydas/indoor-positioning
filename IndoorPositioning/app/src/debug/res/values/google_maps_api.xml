@@ -1,0 +1,19 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=1F:A2:65:46:90:47:C0:6C:03:02:65:B1:7A:58:5D:4A:3C:42:20:66%3Bcom.monte.indoorpositioning
+
+    You can also add your credentials to an existing key, using this line:
+    1F:A2:65:46:90:47:C0:6C:03:02:65:B1:7A:58:5D:4A:3C:42:20:66;com.monte.indoorpositioning
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">***REMOVED***</string>
+</resources>

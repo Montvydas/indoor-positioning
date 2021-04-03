@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".PositioningActivity" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/lock_camera_switch"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/max_freq_seek_bar"
+        android:max="25"
+        android:progress="13"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/min_freq_seek_bar"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/min_freq_seek_bar"
+        android:max="10"
+        android:progress="3"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/max_top_seek_bar"
+        android:layout_centerHorizontal="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="20"
+        android:progress="15"
+        android:id="@+id/max_top_seek_bar"
+        android:layout_above="@+id/lock_camera_switch"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:max="10"
+        android:progress="4"
+        android:layout_height="wrap_content"
+        android:id="@+id/knn_number_seek_bar"
+        android:layout_below="@+id/max_distant_seek_bar"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step Counter Settings"
+        android:textColor="#000000"
+        android:id="@+id/info_text_view"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@+id/max_freq_seek_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_alignStart="@+id/knn_info_text_view" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KNN Algorith Settings"
+        android:textColor="#000000"
+        android:id="@+id/knn_info_text_view"
+        android:layout_marginTop="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:id="@+id/algorithm_radio_group"
+        android:layout_below="@+id/knn_number_seek_bar"
+        android:layout_alignParentStart="true">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Single"
+            android:id="@+id/single_radio_button"
+            android:layout_weight="1"
+            android:checked="false" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Triangle"
+            android:id="@+id/triangle_radio_button"
+            android:checked="false"
+            android:layout_weight="1"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Algorithm"
+            android:id="@+id/algorithm_radio_button"
+            android:checked="true"
+            android:layout_weight="1" />
+    </RadioGroup>
+
+    <com.jjoe64.graphview.GraphView
+        android:layout_width="match_parent"
+        android:layout_height="200dip"
+        android:id="@+id/graph_acceleration"
+        android:layout_above="@+id/info_text_view"
+        android:layout_alignEnd="@+id/lock_camera_switch" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:max="20"
+        android:progress="10"
+        android:layout_height="wrap_content"
+        android:id="@+id/max_distant_seek_bar"
+        android:layout_marginBottom="10dp"
+        android:indeterminate="false"
+        android:layout_below="@+id/knn_info_text_view"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/graph_switch"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

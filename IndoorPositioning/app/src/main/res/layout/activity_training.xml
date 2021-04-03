@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".TrainingActivity" >
+
+<RelativeLayout
+    android:id="@+id/my_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/ground_floor_button"
+        android:backgroundTint="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickSwitchFloor"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:backgroundTint="@color/colorGrey"
+        android:id="@+id/first_floor_button"
+        android:layout_above="@+id/ground_floor_button"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickSwitchFloor"/>
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:text="Clear"
+        android:id="@+id/location_button"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:background="@drawable/my_button_red"
+        android:onClick="onMapClear"
+        android:layout_alignTop="@+id/first_floor_button"
+        android:layout_toStartOf="@+id/button5" />
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:text="Grid"
+        android:textColor="#ffffff"
+        android:id="@+id/button5"
+        android:background="@drawable/my_button_red"
+        android:onClick="onClickGenerateGrid"
+        android:layout_alignTop="@+id/location_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:text="DB"
+        android:textColor="#ffffff"
+        android:id="@+id/button"
+        android:background="@drawable/my_button_red"
+        android:onClick="onClickFromDatabase"
+        android:layout_alignTop="@+id/button5"
+        android:layout_toEndOf="@+id/button5" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="Save!"
+        android:id="@+id/save_button"
+        android:background="@drawable/my_button_white"
+        android:onClick="onClickSaveLocation"
+        android:layout_alignTop="@+id/export_button"
+        android:layout_toEndOf="@+id/export_button" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/location_edit_text"
+        android:gravity="center"
+        android:inputType="textVisiblePassword|textCapSentences"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Single DB"
+        android:onClick="onClickDeleteSingleDB"
+        android:textColor="#ffffff"
+        android:id="@+id/button6"
+        android:background="@drawable/my_button_black"
+        android:layout_alignTop="@+id/ground_floor_button"
+        android:layout_alignEnd="@+id/button" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:backgroundTint="@color/colorGrey"
+        android:id="@+id/one_sample_button"
+        android:onClick="onClickSelectSampleNumber"
+        android:layout_below="@+id/save_button"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="36dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:backgroundTint="@color/colorGrey"
+        android:id="@+id/three_sample_button"
+        android:onClick="onClickSelectSampleNumber"
+        android:layout_below="@+id/one_sample_button"
+        android:layout_alignStart="@+id/one_sample_button" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:backgroundTint="@color/colorPrimary"
+        android:id="@+id/five_sample_button"
+        android:onClick="onClickSelectSampleNumber"
+        android:layout_below="@+id/three_sample_button"
+        android:layout_alignStart="@+id/three_sample_button" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Clear DB"
+        android:textColor="#ffffff"
+        android:onClick="onClickDBClear"
+        android:id="@+id/button2"
+        android:background="@drawable/my_button_black"
+        android:layout_alignTop="@+id/button6"
+        android:layout_alignStart="@+id/location_button" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorGrey"
+        android:id="@+id/show_info_dialog_button"
+        android:onClick="onClickShowInfoDialog"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="Export!"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/export_button"
+        android:background="@drawable/my_button_white"
+        android:onClick="onClickExportDatabase"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/location_edit_text"
+        android:layout_toEndOf="@+id/import_button" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="Import!"
+        android:id="@+id/import_button"
+        android:background="@drawable/my_button_white"
+        android:onClick="onClickImportDatabase"
+        android:layout_alignTop="@+id/export_button"
+        android:layout_alignStart="@+id/location_edit_text" />
+</RelativeLayout>
+
+
+</LinearLayout>
