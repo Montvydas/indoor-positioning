@@ -71,7 +71,7 @@ The whole application is subdivided into multiple modules shown in figure 2. It 
 6. LocationUpdater.java class is responsible for interaction with GPS modules. This is an intended behaviour so that when the user goes from indoor to outdoor location, the more correct GPS signals should be used.
 
 <div>
-  <img src="images/code_structure.png" alt="Code structure" width="180px"/>
+  <img src="images/code_structure.png" alt="Code structure" width="100%"/>
   <img src="images/red_dot.png" alt="Red dot" width="100px"/>
 </div>
 
